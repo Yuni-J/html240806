@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    가격: <input type="text" id="won">원<br>
+    할인율: <input type="text" id="per">%<br>
+    <button type="button" id="btn">할인가격 계산</button>
+    <h3 id="h3"></h3>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', ()=>{
+            let won = document.getElementById('won').value;
+            let per = document.getElementById('per').value;
+
+            let perwon = Number(won) * Number(per*0.01);
+            let pay = Number(won) - perwon;
+
+            let h3 = document.getElementById('h3');
+            let str = `가격:${won}, 할인율:${per}%, 할인금액:${perwon}, 지불금액:${pay}`;
+            h3.innerText = str;
+
+        })
+    </script>
+</body>
+</html>

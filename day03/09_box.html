@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- 
+        box의 속성
+        width : 가로길이
+        height : 세로길이
+        margin : box의 바깥여백
+        padding : box의 안쪽여백
+        box-sizing : box의 크기를 지정하는 속성
+        box-sizing에 따라 width가 컨텐츠의 크기가 될 수 도있고, 
+        박스 전체의 크기가 될 수 도 있음.
+        
+        - border-box => width = 컨텐츠의 가로 + padding + border
+        - content-box => width = 컨텐츠의 가로
+        
+        width = 100px  padding = 5px  border = 1px  (left + right)
+        border-box = padding 5 + 5 + 1 + 1 + 88(내 컨텐츠길이) = 100px => 많이사용
+        content-box = 5 + 5 + 1 + 1 + 100 = 112px
+    -->
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: azure;
+            box-sizing: border-box;
+        }
+        
+        .box1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: azure;
+            box-sizing: content-box;
+        }
+        .box2{
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            width: 200px;
+            height: 100px;
+            padding: 5px;
+            line-height: 100px;
+            background-color: #03c75a;
+            border-radius: 15px;
+        }
+        a{
+            text-decoration: none;
+            margin: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <!-- box2를 클릭하면 naver로 이동하는 버튼(div)을 생성 -->
+    <a href="http://www.naver.com" target="_blank"><div class="box2">naver</div></a>
+   
+
+</body>
+</html>

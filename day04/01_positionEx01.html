@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pbox1{
+            /* width: 100%; 한줄차지 생략가능*/
+            height: 150px;
+            background-color: beige;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .box1{
+            background-color: darkcyan;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        .box2{
+            background-color: darkkhaki;
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        .box3{
+            background-color: darkgoldenrod;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        .pbox2{
+            width: 500px;
+            height: 600px;
+            background-color: blueviolet;
+            position: relative;
+        }
+        .box4{
+            background-color: darkcyan;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="pbox1">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+    <div class="pbox2">
+        <div class="box box4"></div>
+    </div>
+</body>
+</html>

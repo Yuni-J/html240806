@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 화면에 버튼을 생성하여 버튼을 클릭하면 내이름이 h1 태크에 표시 -->
+    <button onclick="eventFun()">button</button>
+    <button id="name">button2</button>
+    <button id="na">button3</button>
+    <h1 id="myname"></h1>
+
+    <script>
+        const printResult = document.getElementById('myname');
+        console.log(printResult);
+
+        function eventFun(){
+            printResult.innerText = 'aaa';
+        }
+
+        document.getElementById('name').addEventListener('click', function(){
+            printResult.innerText='bbb';
+        })
+
+        const na = document.getElementById('na');
+        na.onclick = () => {
+            printResult.innerText='ccc'
+        }
+
+
+    </script>
+</body>
+</html>

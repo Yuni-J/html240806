@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pbox{
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+            /* text-align: center;
+            margin: 0 auto;             블록을 가운데로 정렬 */
+        
+        }
+        .text1{
+            width: 90%;
+            height: 10%;
+            border: 2px solid black;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 45px;
+            
+        }
+        .text2{
+            width: 90%;
+            height: 10%;
+            border: 2px solid black;
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 45px;
+        }
+        .box{
+            width: 90%;
+            height: 70%;
+            border: 2px solid black;
+            position: absolute;
+            top: calc(10% + 25px);
+            left: 15px;
+            position: relative;
+        }
+        .colorbox{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            box-shadow: 5px 5px 5px black;
+        }
+        .colorbox:nth-child(1){
+            top: 15%;
+            left: 15%;
+            background-color: red;
+            z-index: 3;
+            
+        }
+        .colorbox:nth-child(2){
+            top: 30%;
+            left: 30%;
+            background-color: green;
+            z-index: 2;
+        }
+        .colorbox:nth-child(3){
+            top: 45%;
+            left: 45%;
+            background-color: blue;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="pbox">
+        <div class="textbox text1">텍스트</div>
+        <div class="textbox box">
+            <div class="colorbox"></div>
+            <div class="colorbox"></div>
+            <div class="colorbox"></div>
+        </div>
+        <div class="textbox text2">텍스트</div>
+    </div>
+</body>
+</html>

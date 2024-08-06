@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-image: url(../image/배경.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+
+        .container{
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .item:nth-child(1){
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+        .item:nth-child(2){
+            font-weight: 700;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        ul>li{
+            margin: 0 10px;
+            color: white;
+        }
+        .text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 45px;
+            font-weight: 700;
+            color: white;
+        }
+        a{
+            border: 1px solid skyblue;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(20, 99, 133);
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <img src="../image/배경.jpg" alt=""> -->
+    <div class="container">
+        <div class="item">DESIGN</div>
+        <div class="item">
+            <ul>
+                <li>HOME</li>
+                <li>LOGIN</li>
+                <li>SIGNUP</li>
+                <li>BOARD</li>
+            </ul>
+        </div>
+    </div>
+    <div class="text">Welcome to Front-End World
+        <a href="">Learn More</a>
+    </div>
+</body>
+</html>

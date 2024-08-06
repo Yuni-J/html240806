@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        text 속성
+        - text-align : 정렬 left, right, center, justify(양쪽)
+        - text-indent : 들여쓰기
+        - text-decoration : 선긋기
+            - none : 없음
+            - underline : 밑줄
+            - overline : 윗줄
+            - line-through : 가운데줄
+        - text-shadow : 글자 그림자
+            - 좌측px 상단px 번짐정도px 색상
+            - 중첩가능(멀티가능), (,) 콤마로 계속 이어나갈 수 있음
+        - letter-spacing : 글자간 간격
+        - word-spacing : 단어간 간격
+        - line-height : 글자 기준 높이
+        - white-space : 컨텐츠 감싸기 방법
+            - wrap : 여러줄 만들기
+            - nowrap : 한줄로 처리
+        - text-overflow : 텍스트가 범위를 넘어가는 경우 처리
+            - ellipsis : 넘어가는 부분의 단위를 ...으로 처리
+        - overflow : 요소가 넘어가면 어떻게 처리할지 결정
+            - hidden : 숨김
+            - scroll : 스크롤바 생성
+            - auto : 스크롤 오토 생성
+    -->
+    <!-- 
+        css 표준단위
+        px : 픽셀
+        % : 퍼센트 현재 값을 기준으로 %
+        em : 배수, 부모값을 기준으로 배수
+        rem : 배수, 문서의 값을 기준으로 배수
+        cm/mm/in => 각 단위
+        pt : 포인터  1pt => 1/72in
+        pc : 피카소 1pc => 12pt
+        deg : 각도
+    -->
+    <style>
+        p{
+            text-indent: 20px;
+            text-align: justify;
+            /* word-spacing: 10px;
+            letter-spacing: 3px; */
+        }
+        .line{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Nulla elementum mattis facilisis. Vivamus ullamcorper, enim at faucibus volutpat, libero odio blandit ipsum, eu ultricies odio sem id lectus. Suspendisse nec lacinia metus. Mauris posuere sodales elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer in nisi eu orci convallis facilisis eu ac lacus. Suspendisse sed sapien eu ipsum placerat aliquam sed a tellus. Sed in dolor eu felis placerat aliquet. Aenean pulvinar in nisi eget venenatis. Aenean scelerisque ipsum sit amet eros convallis, non euismod enim semper. Vivamus iaculis libero et diam porttitor, ut cursus velit pulvinar.
+    </p>
+    <p class="line">
+        Maecenas ornare a lectus ac sagittis. Quisque felis libero, aliquam sed lorem sed, dictum dapibus ligula. Donec vel turpis id tellus congue ullamcorper eu ac velit. In hac habitasse platea dictumst. Praesent id ultricies lorem. Morbi vel auctor nisl. Aliquam a mollis diam. Proin placerat malesuada velit, a cursus nibh vehicula et. Fusce facilisis tincidunt turpis sit amet egestas. Pellentesque nec ipsum diam. Aenean mi purus, egestas in quam ut, vulputate viverra ligula. Fusce imperdiet est non vulputate malesuada. Cras aliquam dui vel nunc cursus, vitae consequat nunc congue. Nulla laoreet dui ac neque scelerisque posuere. Etiam vel tempor erat, sit amet viverra nulla. Sed imperdiet, tellus sit amet cursus ullamcorper, quam sem consequat mi, hendrerit luctus risus eros nec lacus.
+    </p>
+</body>
+</html>
