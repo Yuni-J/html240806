@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        주민번호 : <input type="text" id="rNum"><br>
+        <button type="button" onclick="nameNum()">확인</button>
+    </form>
+    <h3 id="h3"></h3>
+
+    <script>
+        function nameNum(){
+            let today = new Date(); // 오늘 날짜
+
+            //주민등록번호
+            // 980101-1234567 => 1900년대 (1/2면 1900+98) 
+            // 010101-3234567 => 2000년대 (3/4면 2000+01)
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+            //생년월일, 나이, 성별
+            //생년월일
+            let birth = rNum.substring(0,rNum.indexOf('-'));
+            //성별
+            let getNum = rNum.charAt(rNum.indexOf('-')+1);
+            let gender = (getNum == '1' || getNum == '3')? '남':'여';
+            //나이
+            let year = today.getFullYear();
+            let birthYear = Number(rNum.substring(0,2)); 
+            let age = (getNum<=2)? year-(1900+birthYear) : year-(2000+birthYear);
+
+            document.getElementById('h3').innerText =
+            `이름:${name}, 생년월일:${birth}, 나이:${age}, 성별:${gender}`;
+           
+
+        }
+    </script>
+    
+</body>
+</html>

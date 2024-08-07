@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름 : <input type="text" id="name"> <br> 
+            국어 : <input type="text" id="kor"> <br>
+            영어 : <input type="text" id="eng"> <br>
+            수학 : <input type="text" id="math"> <br>
+            <button type="button" id="btn">성적계산</button>
+        </fieldset>
+    </form>
+    <h3 id="result"></h3>
+
+    <script>
+        // 이름, 국어, 영어, 수학 점수를 입력받아 합계, 평균, 합격여부 출력
+        // 합격여부는 평균이 60이상이면 pass / fail
+
+        // 입력 값의 범위가 0~100 사이의 점수가 아니면 alert 창 띄어 안내
+        
+        document.getElementById('btn').addEventListener('click', ()=>{
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+
+            let sum = Number(kor)+Number(eng)+Number(math);
+            let avg = sum/3;
+
+            if(kor<=100&&kor>=0 && eng<=100&&eng>=0 && math<=100&&math>=0){
+                if(avg>=60){
+                    pf = "합격"
+                }else{
+                    pf = "불합격"
+                }
+            }else{
+                alert("점수를 잘못입력하였습니다. 다시 입력해주세요")
+            }
+
+            document.getElementById('result').innerText = 
+            `합계 : ${sum}, 평균 : ${avg}, 합격여부 : ${pf}`
+
+            
+        })
+
+
+
+    </script>
+</body>
+</html>

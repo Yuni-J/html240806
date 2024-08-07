@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가위바위보 10번하여 승률 출력</h1>
+    <button type="button" id="btn">결과 출력</button>
+    <h3>10게임의 승률은 <span id="result"></span>% 입니다.</h3>
+
+    <script>
+        //가위=1, 바위=2, 보=3
+        //com = random / player = random
+        //승률 계산 (승 / (10-무)) * 100  소수점 2자리까지 표현
+        //콘솔 com / player 출력
+        //콘솔에 승: 무: 패:
+
+        function game(){
+            let cnt1 = 0; 
+            let cnt2 = 0; 
+            let cnt3 = 0; 
+    
+            for(let i=1; i<=10; i++){
+                let com = Math.floor(Math.random()*3)+1;
+                let player = Math.floor(Math.random()*3)+1;
+                console.log(`${com} / ${player}`);
+    
+                if(com==1&&player==2 || com==2&&player==3 || com==3&&player==1){
+                    cnt1++;
+                } else if(com==1&&player==1 || com==2&&player==2 || com==3&&player==3){
+                    cnt2++;
+                } else{
+                    cnt3++;
+                }
+                
+            }
+            console.log(`승 : ${cnt1}, 무 : ${cnt2}, 패 : ${cnt3}`); 
+            
+            let per = (cnt1 / (10-cnt2)).toFixed(2);
+            document.getElementById('result').innerHTML= per;
+        }
+        document.getElementById('btn').addEventListener('click', game)
+
+
+
+
+
+    </script>
+</body>
+</html>

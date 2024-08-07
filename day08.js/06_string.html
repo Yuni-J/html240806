@@ -75,7 +75,7 @@
 
         // 010101-4567890  => 010101-4******
         let rNum = '010101-4567890';
-        let rNumLen = rNum.length;  // 14자리
+        let rNumLen = rNum.length;  // 14자리  //length는 ()가로가 없다
         console.log(rNum.slice(0, rNum.indexOf('-')+2).padEnd(rNumLen,'*'));
 
         // rNum - 다음 숫자가 1,3 남 / 2,4 여 표시
