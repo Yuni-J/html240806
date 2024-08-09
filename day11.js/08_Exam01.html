@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        set을 이용한 로또 생성
+    -->
+    <h1 >
+        1~45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        set 객체를 이용하여 생성
+    </h1>
+    <button type="button" id="random">랜덤번호 6자리 생성(출력)</button>
+    <h1 id="rResult"></h1>
+    <button type="button" id="prize">당첨번호 7자리 생성(출력)</button>
+    <h1 id="pResult"></h1>
+    <button type="button" id="resultBtn">결과 확인</button>
+    <h1 id="result"></h1>
+
+    <script>
+        const randomNum1 = new Set();
+        const randomNum2 = new Set();
+        const rArr1 = [];
+        const rArr2 = [];
+
+
+        
+
+        document.getElementById('random').addEventListener('click',()=>{
+
+            while(randomNum1.size<6){
+                let rNum1 = Math.floor(Math.random()*45)+1;   //램덤번호 6개 생성
+                randomNum1.add(rNum1);
+            }
+            let a = '';
+            randomNum1.forEach(function(v){
+                rArr1.push(v);
+                a += v+" ";
+            })
+            console.log(randomNum1);
+            console.log(rArr1);
+
+            document.getElementById('rResult').innerText = a;
+        })
+
+        document.getElementById('prize').addEventListener('click', ()=>{
+            while(randomNum2.size<7){
+                let rNum2 = Math.floor(Math.random()*45)+1;   //램덤번호 7개 생성
+                randomNum2.add(rNum2);
+            }
+            rArr2.push(randomNum2);
+            let b = rArr2.pop();
+            console.log(randomNum2);
+            console.log(rArr2);
+
+            document.getElementById('pResult').innerText = `${rArr2}[${b}]`;
+        })
+
+    </script>
+</body>
+</html>
