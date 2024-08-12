@@ -21,42 +21,73 @@
     <h1 id="result"></h1>
 
     <script>
-        const randomNum1 = new Set();
-        const randomNum2 = new Set();
-        const rArr1 = [];
-        const rArr2 = [];
-
-
-        
+        const randomNumP = new Set();
+        const randomNumC = new Set();
+        const rArrP = [];
+        const rArrC = [];
 
         document.getElementById('random').addEventListener('click',()=>{
 
-            while(randomNum1.size<6){
-                let rNum1 = Math.floor(Math.random()*45)+1;   //램덤번호 6개 생성
-                randomNum1.add(rNum1);
+            while(randomNumP.size<6){
+                let rNumP = Math.floor(Math.random()*10)+1;   //램덤번호 6개 생성
+                randomNumP.add(rNumP);
             }
             let a = '';
-            randomNum1.forEach(function(v){
-                rArr1.push(v);
+            randomNumP.keys().forEach(function(v){
+                rArrP.push(v);
                 a += v+" ";
             })
-            console.log(randomNum1);
-            console.log(rArr1);
+            console.log(randomNumP);
+            console.log(rArrP);
 
             document.getElementById('rResult').innerText = a;
         })
 
+        let b=0;
         document.getElementById('prize').addEventListener('click', ()=>{
-            while(randomNum2.size<7){
-                let rNum2 = Math.floor(Math.random()*45)+1;   //램덤번호 7개 생성
-                randomNum2.add(rNum2);
+            while(randomNumC.size<7){
+                let rNumC = Math.floor(Math.random()*10)+1;   //램덤번호 7개 생성
+                randomNumC.add(rNumC);
             }
-            rArr2.push(randomNum2);
-            let b = rArr2.pop();
-            console.log(randomNum2);
-            console.log(rArr2);
+            let a ='';
+            randomNumC.keys().forEach(function(v){
+                rArrC.push(v);
+                a += v+" ";
+            })
+            b = rArrC.pop();
+            console.log(randomNumC);
+            console.log(rArrC);
 
-            document.getElementById('pResult').innerText = `${rArr2}[${b}]`;
+            document.getElementById('pResult').innerText = `${rArrC} [${b}]`;
+        })
+
+        document.getElementById('resultBtn').addEventListener('click', ()=>{
+            let count = 0;
+            let bonus = 0;
+            let result = '';
+
+            for(let i=0; i<rArrC.length; i++){
+                if(rArrP.includes(rArrC[i])){
+                    count++;
+                } else if(rArrP.includes(b)){
+                    bonus++;
+                }
+            }
+            if(count==6){
+                result = '1등';
+            }else if(count==5 && bonus==1){
+                result = '2등';
+            }else if(count==5){
+                result = '3등';
+            }else if(count==4){
+                result = '4등';
+            }else if(count==3){
+                result = '5등';
+            }else{
+                result = '꽝';
+            }
+            console.log(count);
+            document.getElementById('result').innerText = `${result}`;
         })
 
     </script>
