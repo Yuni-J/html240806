@@ -8,3 +8,8 @@ https://inpa.tistory.com/
 
 https://studiomeal.com/blog(1분코딩)
 : HTML/CSS 
+
+
+
+https://jsonplaceholder.typicode.com/
+:json소스코드

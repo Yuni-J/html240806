@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head id="header"></head>
+    <section id="section"></section>
+
+    <script>
+        const head ={
+            squadName: "Super Hero Squad",
+            homeTown: "Metro City",
+            formed: 2016,
+        }
+    
+        const title = [];
+        title.push(head);
+    
+        const header = document.getElementById('header');
+        let str1 = '';
+        for(let t of title){
+            for(let keyName in t){
+                console.log(keyName+" : "+t[keyName]);
+                str1 = `<div>${keyName} : ${t[keyName]}</div>`;
+            }
+        }
+        header.innerHTML = str1;
+    
+        const member1 = {
+            name: "Molecule Man",
+            age: 29,
+            secretIdentity: "Dan Jukes",
+            Superpowers: [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        }
+        const member2 = {
+            name: "Madame Uppercut",
+            age: 39,
+            secretIdentity: "Jane Wilson",
+            Superpowers: [
+                "Million tonne punch",
+                "Damage resistance",
+                "Superhuman reflexes"
+            ]
+        }
+        const member3 ={
+            name: "Eternal Flame",
+            age: 1000000,
+            secretIdentity: "Unknown",
+            Superpowers: [
+                "Immortality",
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation",
+                "Interdimensional travel"
+            ]
+        }
+        
+        const hero = [];
+        hero.push(member1);
+        hero.push(member2);
+        hero.push(member3);
+
+        console.log(hero);
+
+        const section = document.getElementById('section');
+        let str = '';
+        for(let people of hero){
+            for(let keyName in people){
+                if(keyName == 'Superpowers'){
+                    for(let s of people[keyName]){
+                        console.log(s);
+                        str += `<li>${s}</li>`;
+                    }
+                }else{
+                    console.log(keyName+" : "+people[keyName]);
+                    str += `<div>${keyName} : ${people[keyName]} </div>`;
+                }
+            }
+        }
+        section.innerHTML = str;
+        
+    </script>
+</body>
+</html>

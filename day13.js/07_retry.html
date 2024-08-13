@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head id="header">
+        <h1 id="title1"></h1>
+        <h3 id="title2"></h3>
+    </head>
+    <section id="section"></section>
+    
+    <script>
+        async function asyncFun(){
+            try{
+                const resp = await fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+                const result = await resp.json();
+                console.log(resp);
+                console.log(result);
+                return result;
+            }catch (error){
+                console.log(error);
+            }
+        }
+
+        function printDate(result){
+            const title1 = document.getElementById('title1');
+            const title2 = document.getElementById('title2');
+            title1.innerText = result.squadName;
+            title2.innerText = `${result.homeTown} // ${result.formed}`;
+
+            const section = document.getElementById('section');
+            let str = '';
+            for(let mem of result.members){
+                console.log(mem);
+                str += `<div><p>${mem.name}</p>`;
+                str += `<p>${mem.secretIdentity}</p>`;
+                str += `<p>${mem.age}</p>`;
+                str += `<p>${mem.powers}</p>`;
+            }
+            section.innerHTML = str;
+        }
+        asyncFun().then(result=>{
+            console.log(result);
+            printDate(result);
+        })
+
+    </script>
+</body>
+</html>
