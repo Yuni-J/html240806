@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../travel_day05/style.css">
+ 
+</head>
+<body>
+    <h1>Travel</h1>
+    <ul>
+        <li><a id="home">Home</a></li>
+        <li><a id="seoul">Seoul</a></li>
+        <li><a id="tokyo">Tokyo</a></li>
+        <li><a id="paris">Paris</a></li>
+    </ul>
+    <img id="img" src="../image/비행기2.jpg" alt="home_image">
+
+
+    <script>
+        const img = document.getElementById('img');
+        document.getElementById('home').onclick = function(){
+            img.src = "../image/비행기2.jpg";
+        }
+        document.getElementById('seoul').onclick = function(){
+            img.src="../image/서울.jpg";
+        }
+        document.getElementById('tokyo').onclick = function(){
+            img.src="../image/도쿄2.jpg";
+        }
+        document.getElementById('paris').onclick = function(){
+            img.src="../image/파리2.jpg";
+        }
+    </script>
+</body>
+</html>
