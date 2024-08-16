@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 야구게임 -->
+    <button type="button" id="startBtn">게임시작</button>
+    <h1 id="comMsg"></h1>
+    숫자 입력 : <input type="text" id="myNum">
+    <button type="button" id="tryBtn">게임확인</button>
+    <ol id="ol"></ol>
+
+    <script>
+        const comNum = new Set();
+        const comArr = [];
+        const myArr = [];
+        let ol = document.getElementById('ol');
+        
+        //randomNumber 생성
+        function randomNum(comNum, comArr, num){
+            while(comNum.size < num){
+                comNum.add(Math.floor(Math.random()*9)+0);
+            }
+            comNum.forEach((e)=>{
+                comArr.push(e);
+            })
+        };
+
+        document.getElementById('startBtn').addEventListener('click',()=>{
+            randomNum(comNum, comArr, 3);
+            console.log(comNum);
+            console.log(comArr);
+            
+            document.getElementById('comMsg').innerText = 
+            '컴퓨터가 숫자를 결정하였습니다.';
+        });
+        
+        
+        
+        document.getElementById('tryBtn').addEventListener('click',()=>{
+            const myNum = document.getElementById('myNum').value;
+            myArr.push(myNum.split(""));
+            // myNum.forEach((v)=>{
+            //     myArr.push(v);
+            // })  // 배열은 forEach 사용불가
+            console.log(myNum);
+            console.log(myArr);
+            
+            if(myArr.length != 3){
+                document.getElementById('comMsg').innerText =
+                '숫자를 잘못 입력하였습니다. 숫자 3개를 입력해주세요';
+            }else{
+                if(strike(comArr, myArr)==3){
+                    ol.innerHTML += `<li>${myArr} 정답!</li>`;
+                }else if(strike(comArr, myArr)==0 && ball(comArr, myArr)==0){
+                    ol.innerHTML += `<li>${myArr} out!!!</li>`;
+                }else{
+                    ol.innerHTML = `<li>${myArr} ${s},${b}</li>`;
+                }
+                
+            }
+       })
+
+       function strike(comArr, myArr){
+            let s = 0;
+            for(let i=0;i<comArr.length;i++){
+                for(let j=0;j<myArr.length;j++){
+                    if(comArr[i]==myNum[j] && i==j){
+                        s++;
+                    }
+                }
+            }
+            return s;
+       }
+
+       function ball(comArr, myArr){
+            let b = 0;
+            for(let i=0;i<comArr.length;i++){
+                for(let j=0;j<myArr.length;j++){
+                    if(comArr[i]==myArr[j] && i !=j){
+                        b++;
+                    }
+                }
+            }
+            return b;
+       }
+
+
+
+    </script>
+</body>
+</html>
